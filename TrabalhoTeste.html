@@ -1,0 +1,35 @@
+<meta charset = "UTF-8">
+<!DOCTYPE html>
+<html>
+<body>
+
+<form class="Recebendo senhas e comparando">
+
+    <fieldset>
+
+        <legend>Confirmação de Senha</legend>
+        <input type="password" placeholder="Senha" id="senha" required>
+        <input type="password" placeholder="Confirme Senha" id="confirma_senha" required>
+        <button type="submit" class="pure-button pure-button-primary">Confirmar</button>
+
+    </fieldset>
+   
+</form>
+
+<script>
+var senha = document.getElementById("senha")
+  , confirma_senha = document.getElementById("confirma_senha");
+
+function validatePassword(){
+  if(senha.value != confirma_senha.value) {
+    confirma_senha.setCustomValidity("Senhas diferentes!");
+  } else {
+    confirma_senha.setCustomValidity('Senhas conferem!');
+  }
+}
+
+senha.onchange = validatePassword;
+confirma_senha.onkeyup = validatePassword;
+</script>
+</body>
+</html>
